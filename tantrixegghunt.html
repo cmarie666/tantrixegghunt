@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <!-- Include Lato font from Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
+  <style>
+    body {
+      font-family: 'Lato', sans-serif; /* Use Lato font */
+      color: #000000; /* Set font color to black */
+      background-color: #FFCCDF; /* Set background color to pink */
+      text-align: center;
+    }
+    #login-form {
+      margin-top: 100px;
+    }
+    #logo {
+      width: 100%; /* Make the logo responsive */
+      max-width: 200px; /* Set maximum width for the logo */
+      height: auto;
+      margin-bottom: 20px; /* Add spacing below the logo */
+    }
+    #main-header img {
+      width: 100%; /* Make the main header image responsive */
+      max-width: 300px; /* Set maximum width for the main header image */
+      height: auto;
+    }
+    #protected-header img {
+      width: 100%; /* Make the protected header image responsive */
+      max-width: 80%; /* Set maximum width for the protected header image */
+      height: auto;
+    }
+    #protected-header p {
+      margin-top: 20px; /* Add margin below the image */
+    }
+
+    /* Media query for small devices */
+    @media only screen and (max-width: 600px) {
+      #login-form {
+        margin-top: 50px; /* Reduce margin on small screens */
+      }
+      #logo {
+        max-width: 150px; /* Adjust logo size for small screens */
+      }
+      #main-header img {
+        max-width: 200px; /* Adjust main header image size for small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Page Header -->
+  <div id="main-header">
+    <img id="main-logo" src="file:///C:/Users/KADPS/Desktop/tantrixegg.png" alt="Main Page Header">
+  </div>
+
+  <div id="login-form">
+    <h2>ENTER PASSWORD</h2>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="authenticate()">Submit</button>
+    <p id="message"></p>
+  </div>
+
+  <div id="content" style="display: none;">
+    <!-- Your content goes here -->
+    <h1>Congrats on making it this far! Below you'll find your final clue!!</h1>
+
+    <!-- Header for Protected Page -->
+    <div id="protected-header">
+      <img src="file:///C:/Users/KADPS/Desktop/1.png" alt="Protected Page Header">
+     
+    </div>
+  </div>
+
+  <script>
+    function authenticate() {
+      var password = document.getElementById("password").value;
+      if (password === "8675309") { // Correct password
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else { // Incorrect password
+        document.getElementById("message").innerHTML = "Incorrect password. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
